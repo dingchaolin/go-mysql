@@ -35,8 +35,8 @@ func (c * Client) InitConnection(){
 	if err != nil {
 		log.Panicln(fmt.Sprintf("%v", err ))
 	} else {
-		c.Conn.SetMaxOpenConns(1)
-		c.Conn.SetMaxIdleConns(1)
+		c.Conn.SetMaxOpenConns(20)
+		c.Conn.SetMaxIdleConns(10)
 		c.Conn.Ping()
 	}
 }
